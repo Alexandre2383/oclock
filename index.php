@@ -2,11 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>O'Clock PWA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horloge PWA</title>
+	<meta name="description" content="A clock application with chronometer, timer and alarm.">
+    <meta name="author" content="Alexandre">
+    <meta name="theme-color" content="#241a91"><!-- shadowblue -->
+    <meta property="og:image" content="./img/clock800.svg">
+    <link rel="shortcut icon" href="./img/clock800.svg">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./oclock.webmanifest">
+    <link rel="stylesheet" href="./sw.js">
+    <script src="component/clock.js" defer></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
+    <button id="notifications">Request dummy notifications</button>
     <div class="tabs">
         <button id="clockTab" onclick="showTab('clock')">Horloge</button>
         <button id="timerTab" onclick="showTab('timer')">Timer</button>
@@ -41,5 +51,6 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="./component/clock.js"></script>
 </body>
 </html>
