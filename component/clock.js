@@ -144,10 +144,32 @@ function setAlarm() {
 
     var timeUntilAlarm = alarmDate - now;
     setTimeout(function() {
-        alert("Réveil !");
+        permissionNotification();
+        
     }, timeUntilAlarm);
 }
 
+//Notification permission
+function permissionNotification() {
+      Notification.requestPermission().then((result) => {
+        if (result === "granted") {
+          printNotification();
+        }
+      });
+}
+
+//Notfication construct
+function printNotification() {
+  console.log("Notification granted")
+  const notifTitle = `Alarm`;
+  const notifBody = `Created by Alex.`;
+  const notifImg = `img/clock800.svg`;
+  const options = {
+    body: notifBody,
+    icon: notifImg,
+  };
+  new Notification(notifTitle, options);
+};
 
 updateClock(); // Start the clock in page opening
 showTab("clock"); // Print the clock as default tab

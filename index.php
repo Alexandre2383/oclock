@@ -7,16 +7,16 @@
 	<meta name="description" content="A clock application with chronometer, timer and alarm.">
     <meta name="author" content="Alexandre">
     <meta name="theme-color" content="#241a91"><!-- shadowblue -->
-    <meta property="og:image" content="./img/clock800.svg">
-    <link rel="shortcut icon" href="./img/clock800.svg">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./oclock.webmanifest">
-    <link rel="stylesheet" href="./sw.js">
-    <script src="component/clock.js" defer></script>
-    <script src="app.js" defer></script>
+    <meta property="og:image" content="./img/clock512.svg">
+    <link rel="shortcut icon" href="./img/clock96.svg">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="/oclock.webmanifest">
+    <script src="./component/clock.js" defer></script>
+    <script src="./app.js" defer></script>
+    <script src="./sw.js"></script>
 </head>
 <body>
-    <button id="notifications">Request dummy notifications</button>
+    <!-- <button id="notifications">Request dummy notifications</button> -->
     <div class="tabs">
         <button id="clockTab" onclick="showTab('clock')">Horloge</button>
         <button id="timerTab" onclick="showTab('timer')">Timer</button>
@@ -49,8 +49,5 @@
         <input type="time" id="alarmTime">
         <button onclick="setAlarm()">Définir</button>
     </div>
-
-    <script src="app.js"></script>
-    <script src="./component/clock.js"></script>
 </body>
 </html>
