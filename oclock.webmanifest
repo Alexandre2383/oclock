@@ -1,11 +1,13 @@
 {
     "name": "O' Clock",
     "short_name": "Oclock",
-    "start_url": "index.html",
+    "start_url": "/",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#fdfdfd",
-    "theme_color": "#db4938",
+    "theme_color": "#241a91",
     "orientation": "portrait-primary",
+
     "icons": [
       {
         "src": "/img/clock32.svg",

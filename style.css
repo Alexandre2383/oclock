@@ -1,31 +1,29 @@
-
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 .clock {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 .timer {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .alarm {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 .tabs {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .tabContent {
-    display: none;
+  display: none;
 }
 
 #clock {
-    display: block;
+  display: block;
 }
