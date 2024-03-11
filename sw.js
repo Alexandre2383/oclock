@@ -58,7 +58,6 @@ self.addEventListener('install', (event) => {
       "./app.js",
       "./style.css",
       "./component/clock.js",
-      "./img/Pocket_watch.svg",
       "./img/clock32.svg",
       "./img/clock64.svg",
       "./img/clock96.svg",
@@ -73,7 +72,8 @@ self.addEventListener('install', (event) => {
       "./img/stars_night.jpg",
       "./img/screenshot1.png",
       "./img/screenshot2.png",
-      "./font/TheBlowar-Regular.ttf"
+      "./font/TheBlowar-Regular.ttf",
+      "./img/Pocket_watch/Pocket_watch_test.svg"
     ])
   );
 });

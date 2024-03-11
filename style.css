@@ -6,19 +6,15 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-image: url('./img/stars_night.jpg');
-  background-position: center;
+  background-image: url("./img/stars_night.jpg");
   background-repeat: no-repeat;
-  /* back */
+  color: aliceblue;
 }
 
 .pocket_watch {
   max-width: 50%;
   margin: 0;
   margin-right: 10rem;
-
-  /* position: absolute;
-  right: 10rem; */
 }
 .timer {
   margin-top: 20px;
@@ -41,24 +37,38 @@ body {
   display: block;
 }
 
-.tab_clock{
+.tab_clock {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
-.numerique_clock{
-  font-family: "Old-School", 'Courier New', Courier, monospace;
+.numerique_clock {
+  font-family: "Old-School", "Courier New", Courier, monospace;
   font-size: 5em;
   color: aliceblue;
   margin: 0;
-  margin-left: 10rem;
   max-width: 50%;
   text-shadow: -3px -8px 4px black;
-
+  position: absolute;
+  top: 53%;
+  left: 59%;
 }
-.tab_title{
-  font-family: "Old-School", 'Courier New', Courier, monospace;
+.tab_title {
+  font-family: "Old-School", "Courier New", Courier, monospace;
   font-size: 5em;
   margin: 0;
   color: aliceblue;
   text-shadow: -3px -8px 4px black;
+}
+
+/***!SECTION GUSSET CLOCK */
+.clock_svg {
+  position: absolute;
+  margin-top: 0;
+}
+.filler {
+  position: relative;
+  bottom: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
 }
