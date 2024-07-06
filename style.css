@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "Old-School";
-  src: url("./font/TheBlowar-Regular.ttf") format("truetype");
+  font-family: 'Old-School';
+  src: url('./font/TheBlowar-Regular.ttf') format('truetype');
 }
 
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-image: url("./img/stars_night.jpg");
+  background-image: url('./img/stars_night.jpg');
   background-repeat: no-repeat;
   color: aliceblue;
 }
@@ -42,18 +42,18 @@ body {
   justify-content: center;
 }
 .numerique_clock {
-  font-family: "Old-School", "Courier New", Courier, monospace;
-  font-size: 5em;
+  font-family: 'Old-School', 'Courier New', Courier, monospace;
+  font-size: 10em;
   color: aliceblue;
   margin: 0;
-  max-width: 50%;
+  /* max-width: 50%; */
   text-shadow: -3px -8px 4px black;
   position: absolute;
-  top: 53%;
-  left: 59%;
+  top: 14rem;
+  right: -5rem;
 }
 .tab_title {
-  font-family: "Old-School", "Courier New", Courier, monospace;
+  font-family: 'Old-School', 'Courier New', Courier, monospace;
   font-size: 5em;
   margin: 0;
   color: aliceblue;
