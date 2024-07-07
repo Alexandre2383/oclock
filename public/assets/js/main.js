@@ -35,4 +35,13 @@ document.addEventListener('DOMContentLoaded', function () {
     chronoSection.classList.add('hidden')
     alarmSection.classList.remove('hidden')
   })
+
+  getWeatherButton.addEventListener('click', function () {
+    const city = document.getElementById('cityInput').value
+    if (city) {
+      getWeather(city)
+    } else {
+      alert('Please enter a city name.')
+    }
+  })
 })

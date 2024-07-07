@@ -13,8 +13,7 @@
     <!-- shadowblue -->
     <meta property="og:image" content="./img/clock512.svg" />
     <link rel="shortcut icon" href="./img/clock96.svg" />
-    <link rel="stylesheet" href="./style.css" />
-
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="manifest" href="/oclock.webmanifest" />
   </head>
   <body>
@@ -54,12 +53,36 @@
       <!-- Horloge et météo -->
       <div id="clockSection" class="clock">
         <div class="card">
+          <div class="container_title">
+            <img src="./assets/icons/icons8-clock-100.png" alt="" />
+            <h1 class="title">Clock</h1>
+          </div>
           <div><p id="clockDisplay" class="numerique_clock"></p></div>
-          <div>
-            <h1>Weather</h1>
-            <div>
-              <p>temps</p>
-              <p>température</p>
+          <div class="container_weather">
+            <div class="">
+              <h2>Actual Weather</h2>
+              <label for="searchButton">
+                <input
+                  type="text"
+                  id="locationInput"
+                  placeholder="Enter a city"
+                />
+                <button id="searchButton">Search</button>
+              </label>
+            </div>
+            <div class="weather_info">
+              <h2 id="location"></h2>
+              <img
+                id="weatherIcon"
+                src=""
+                alt="Weather Icon"
+                class="weather_icon"
+              />
+              <div class="weather_info">
+                <p id="temperature"></p>
+                <p id="humidity"></p>
+              </div>
+              <p id="description"></p>
             </div>
           </div>
         </div>
@@ -69,33 +92,32 @@
         <div class="card">
           <h2>Timer</h2>
           <input type="text" id="timerInput" placeholder="hh:mm:ss" />
-          <button onclick="startTimer()">Démarrer</button>
-          <button onclick="stopTimer()">Arrêter</button>
+          <button onclick="startTimer()">Start</button>
+          <button onclick="stopTimer()">Stop</button>
           <div id="timerDisplay"></div>
         </div>
       </div>
-      <script src="./assets/js/main.js"></script>
       <!-- Chrono -->
       <div id="chronoSection" class="chrono hidden">
         <div class="card">
-          <h2>Chronomètre</h2>
-          <button onclick="startStopwatch()">Démarrer</button>
-          <button onclick="stopStopwatch()">Arrêter</button>
+          <h2>Chronometer</h2>
+          <button onclick="startStopwatch()">Start</button>
+          <button onclick="stopStopwatch()">Stop</button>
           <div id="stopwatchDisplay"></div>
         </div>
       </div>
       <!-- Alarm -->
       <div id="alarmSection" class="alarm hidden">
         <div class="card">
-          <h2>Réveil</h2>
+          <h2>Alarm</h2>
           <input type="time" id="alarmTime" />
-          <button onclick="setAlarm()">Définir</button>
+          <button onclick="setAlarm()">Set</button>
         </div>
       </div>
 
-      <script src="./component/numerique_clock.js" defer></script>
-      <!-- <script src="./component/gusset_clock.js" defer></script> -->
-      <script src="./component/clock.js"></script>
+      <script src="./assets/js/numerique_clock.js" defer></script>
+      <script src="./assets/js/weather.js" defer></script>
+      <script src="./assets/js/main.js"></script>
       <script src="./app.js" defer></script>
       <script type="module" src="./sw.js"></script>
     </main>
