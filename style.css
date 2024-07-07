@@ -96,6 +96,10 @@ nav > div > img:hover {
   width: 50vw;
 }
 
+.hidden {
+  display: none;
+}
+
 .numerique_clock {
   font-family: 'Old-School', 'Courier New', Courier, monospace;
   font-size: 8em;

@@ -14,7 +14,7 @@
     <meta property="og:image" content="./img/clock512.svg" />
     <link rel="shortcut icon" href="./img/clock96.svg" />
     <link rel="stylesheet" href="./style.css" />
-    <!-- <link rel="stylesheet" href="./clock.css" /> -->
+
     <link rel="manifest" href="/oclock.webmanifest" />
   </head>
   <body>
@@ -22,24 +22,28 @@
       <nav>
         <div>
           <img
+            id="showClock"
             src="./assets/icons/icons8-clock-100.png"
             alt="Fonction horloge"
           />
         </div>
         <div>
           <img
-            src="./assets/icons/icons8-stopwatch-100.png"
+            id="showTimer"
+            src="./assets/icons/icons8-hourglass-100.png"
             alt="Fonction chronometre"
           />
         </div>
         <div>
           <img
-            src="./assets/icons/icons8-hourglass-100.png"
+            id="showChrono"
+            src="./assets/icons/icons8-stopwatch-100.png"
             alt="Fonction minuteur"
           />
         </div>
         <div>
           <img
+            id="showAlarm"
             src="./assets/icons/icons8-alarm-clock-100.png"
             alt="Fonction reveil"
           />
@@ -47,7 +51,8 @@
       </nav>
     </header>
     <main>
-      <div class="clock">
+      <!-- Horloge et météo -->
+      <div id="clockSection" class="clock">
         <div class="card">
           <div><p id="clockDisplay" class="numerique_clock"></p></div>
           <div>
@@ -59,31 +64,37 @@
           </div>
         </div>
       </div>
+      <!-- Timer -->
+      <div id="timerSection" class="timer hidden">
+        <div class="card">
+          <h2>Timer</h2>
+          <input type="text" id="timerInput" placeholder="hh:mm:ss" />
+          <button onclick="startTimer()">Démarrer</button>
+          <button onclick="stopTimer()">Arrêter</button>
+          <div id="timerDisplay"></div>
+        </div>
+      </div>
+      <script src="./assets/js/main.js"></script>
+      <!-- Chrono -->
+      <div id="chronoSection" class="chrono hidden">
+        <div class="card">
+          <h2>Chronomètre</h2>
+          <button onclick="startStopwatch()">Démarrer</button>
+          <button onclick="stopStopwatch()">Arrêter</button>
+          <div id="stopwatchDisplay"></div>
+        </div>
+      </div>
+      <!-- Alarm -->
+      <div id="alarmSection" class="alarm hidden">
+        <div class="card">
+          <h2>Réveil</h2>
+          <input type="time" id="alarmTime" />
+          <button onclick="setAlarm()">Définir</button>
+        </div>
+      </div>
 
-      <!-- </div> -->
-
-      <!-- <div id="timer" class="tabContent"> -->
-      <!-- <h2>Timer</h2>
-      <input type="text" id="timerInput" placeholder="hh:mm:ss" />
-      <button onclick="startTimer()">Démarrer</button>
-      <button onclick="stopTimer()">Arrêter</button>
-      <div id="timerDisplay"></div> -->
-      <!-- </div> -->
-
-      <!-- <div id="stopwatch" class="tabContent"> -->
-      <!-- <h2>Chronomètre</h2>
-      <button onclick="startStopwatch()">Démarrer</button>
-      <button onclick="stopStopwatch()">Arrêter</button>
-      <div id="stopwatchDisplay"></div> -->
-      <!-- </div> -->
-
-      <!-- <div id="alarm" class="tabContent"> -->
-      <!-- <h2>Réveil</h2>
-      <input type="time" id="alarmTime" />
-      <button onclick="setAlarm()">Définir</button> -->
-      <!-- </div> -->
       <script src="./component/numerique_clock.js" defer></script>
-      <script src="./component/gusset_clock.js" defer></script>
+      <!-- <script src="./component/gusset_clock.js" defer></script> -->
       <script src="./component/clock.js"></script>
       <script src="./app.js" defer></script>
       <script type="module" src="./sw.js"></script>
