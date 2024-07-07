@@ -1,0 +1,37 @@
+{
+  "name": "O' Clock",
+  "short_name": "Oclock",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fdfdfd",
+  "theme_color": "#241a91",
+  "orientation": "portrait-primary",
+
+  "icons": [
+    {
+      "src": "/assets/img/clock192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/img/clock512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/img/screenshot1.png",
+      "type": "image/png",
+      "sizes": "720x405",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/assets/img/screenshot2.png",
+      "type": "image/jpg",
+      "sizes": "1315x740",
+      "form_factor": "wide"
+    }
+  ]
+}

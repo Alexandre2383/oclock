@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>O'Clock PWA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A clock application with chronometer, timer and alarm."
+    />
+    <meta name="author" content="Alexandre" />
+    <meta name="theme-color" content="#241a91" />
+    <!-- shadowblue -->
+    <meta property="og:image" content="./img/clock512.svg" />
+    <link rel="shortcut icon" href="./img/clock96.svg" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="manifest" href="/oclock.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <img
+            id="showClock"
+            src="./assets/icons/icons8-clock-100.png"
+            alt="Fonction horloge"
+          />
+        </div>
+        <div>
+          <img
+            id="showTimer"
+            src="./assets/icons/icons8-hourglass-100.png"
+            alt="Fonction chronometre"
+          />
+        </div>
+        <div>
+          <img
+            id="showChrono"
+            src="./assets/icons/icons8-stopwatch-100.png"
+            alt="Fonction minuteur"
+          />
+        </div>
+        <div>
+          <img
+            id="showAlarm"
+            src="./assets/icons/icons8-alarm-clock-100.png"
+            alt="Fonction reveil"
+          />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Horloge et météo -->
+      <div id="clockSection" class="clock">
+        <div class="card">
+          <div class="container_title">
+            <img src="./assets/icons/icons8-clock-100.png" alt="" />
+            <h1 class="title">Clock</h1>
+          </div>
+          <div><p id="clockDisplay" class="numerique_clock"></p></div>
+          <div class="container_weather">
+            <div class="">
+              <h2>Actual Weather</h2>
+              <label for="searchButton">
+                <input
+                  type="text"
+                  id="locationInput"
+                  placeholder="Enter a city"
+                />
+                <button id="searchButton">Search</button>
+              </label>
+            </div>
+            <div class="weather_info">
+              <h2 id="location"></h2>
+              <img
+                id="weatherIcon"
+                src=""
+                alt="Weather Icon"
+                class="weather_icon"
+              />
+              <div class="weather_info">
+                <p id="temperature"></p>
+                <p id="humidity"></p>
+              </div>
+              <p id="description"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Timer -->
+      <div id="timerSection" class="timer hidden">
+        <div class="card">
+          <h2>Timer</h2>
+          <input type="text" id="timerInput" placeholder="hh:mm:ss" />
+          <button onclick="startTimer()">Start</button>
+          <button onclick="stopTimer()">Stop</button>
+          <div id="timerDisplay"></div>
+        </div>
+      </div>
+      <!-- Chrono -->
+      <div id="chronoSection" class="chrono hidden">
+        <div class="card">
+          <h2>Chronometer</h2>
+          <button onclick="startStopwatch()">Start</button>
+          <button onclick="stopStopwatch()">Stop</button>
+          <div id="stopwatchDisplay"></div>
+        </div>
+      </div>
+      <!-- Alarm -->
+      <div id="alarmSection" class="alarm hidden">
+        <div class="card">
+          <h2>Alarm</h2>
+          <input type="time" id="alarmTime" />
+          <button onclick="setAlarm()">Set</button>
+        </div>
+      </div>
+
+      <script src="./assets/js/numerique_clock.js" defer></script>
+      <script src="./assets/js/weather.js" defer></script>
+      <script src="./assets/js/main.js"></script>
+      <script src="./app.js" defer></script>
+      <script type="module" src="./sw.js"></script>
+    </main>
+  </body>
+</html>
