@@ -1,0 +1,39 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.content.disable {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.content .column {
+  border-radius: 5px;
+  padding: 0 10px;
+  background-color: aliceblue;
+  border: 1px solid #999;
+  width: calc(100% / 3 -5px);
+}
+
+.column select {
+  font-family: 'Robot Text', 'Courier New', Courier, monospace;
+  outline: none;
+  border: none;
+  height: 53px;
+  background-color: aliceblue;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.btnAlarm {
+  width: 10rem;
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  padding: 17px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
