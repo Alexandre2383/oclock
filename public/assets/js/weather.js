@@ -47,7 +47,7 @@ async function getWeather(city, apiKey) {
     locationElement.textContent = data.name
     temperatureElement.textContent = `${temperature}°C`
     descriptionElement.textContent = weatherDescription
-    humidityElement.textContent = `Humidity ${humidity}%`
+    humidityElement.textContent = `${humidity}%`
 
     // Détermination de l'icône météo à afficher
     let weatherIcon = ''

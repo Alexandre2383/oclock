@@ -80,7 +80,8 @@
               />
               <div class="weather_info">
                 <p id="temperature"></p>
-                <p id="humidity"></p>
+                <p class="p_humidity">humidity<span id="humidity"></span></p>
+                <!-- <p id="humidity"></p> -->
               </div>
               <p id="description"></p>
             </div>
@@ -92,7 +93,7 @@
         <div class="card">
           <h2>Timer</h2>
           <input type="text" id="timerInput" placeholder="hh:mm:ss" />
-          <button onclick="startTimer()">Start</button>
+          <button onclick="startTimer()">Start ▼</button>
           <button onclick="stopTimer()">Stop</button>
           <div id="timerDisplay"></div>
         </div>
@@ -118,8 +119,8 @@
       <script src="./assets/js/numerique_clock.js" defer></script>
       <script src="./assets/js/weather.js" defer></script>
       <script src="./assets/js/main.js"></script>
-      <script src="./app.js" defer></script>
-      <script type="module" src="./sw.js"></script>
+      <script src="./assets/js/swRegister.js" defer></script>
+      <script type="module" src="./assets/js/sw.js"></script>
     </main>
   </body>
 </html>
