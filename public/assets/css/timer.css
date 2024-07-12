@@ -9,7 +9,7 @@
     font-size: 10vh;
     text-align: center;
     width: 2em;
-
+    background: transparent;
     border: none;
     color: rgb(226, 226, 163);
   }
