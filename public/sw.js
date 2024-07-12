@@ -1,34 +1,34 @@
-const cacheName = "jsOclockPWA-v1";
+const cacheName = 'jsOclockPWA-v2'
 
 const addResourcesToCache = async (resources) => {
-  const cache = await caches.open(cacheName);
-  await cache.addAll(resources);
-};
+  const cache = await caches.open(cacheName)
+  await cache.addAll(resources)
+}
 
 const putInCache = async (request, response) => {
-  const cache = await caches.open(cacheName);
-  await cache.put(request, response);
-};
+  const cache = await caches.open(cacheName)
+  await cache.put(request, response)
+}
 
 const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
   // First try to get the resource from the cache
-  const responseFromCache = await caches.match(request);
+  const responseFromCache = await caches.match(request)
   if (responseFromCache) {
-    return responseFromCache;
+    return responseFromCache
   }
 
   // Next try to get the resource from the network
   try {
-    const responseFromNetwork = await fetch(request.clone());
+    const responseFromNetwork = await fetch(request.clone())
     // response may be used only once
     // we need to save clone to put one copy in cache
     // and serve second one
-    putInCache(request, responseFromNetwork.clone());
-    return responseFromNetwork;
+    putInCache(request, responseFromNetwork.clone())
+    return responseFromNetwork
   } catch (error) {
-    const fallbackResponse = await caches.match(fallbackUrl);
+    const fallbackResponse = await caches.match(fallbackUrl)
     if (fallbackResponse) {
-      return fallbackResponse;
+      return fallbackResponse
     }
     // when even the fallback response is not available,
     // there is nothing we can do, but we must always
@@ -36,47 +36,47 @@ const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
     return new Response('Network error happened', {
       status: 408,
       headers: { 'Content-Type': 'text/plain' },
-    });
+    })
   }
-};
+}
 
 const enableNavigationPreload = async () => {
   if (self.registration.navigationPreload) {
     // Enable navigation preloads!
-    await self.registration.navigationPreload.enable();
+    await self.registration.navigationPreload.enable()
   }
-};
+}
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(enableNavigationPreload());
-});
+  event.waitUntil(enableNavigationPreload())
+})
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     addResourcesToCache([
-      "./index.html",
-      "./app.js",
-      "./style.css",
-      "./component/clock.js",
-      "./img/clock32.svg",
-      "./img/clock64.svg",
-      "./img/clock96.svg",
-      "./img/clock128.svg",
-      "./img/clock144.svg",
-      "./img/clock168.svg",
-      "./img/clock192.svg",
-      "./img/clock256.svg",
-      "./img/clock512.svg",
-      "./img/clock192.png",
-      "./img/clock512.png",
-      "./img/stars_night.jpg",
-      "./img/screenshot1.png",
-      "./img/screenshot2.png",
-      "./font/TheBlowar-Regular.ttf",
-      "./img/Pocket_watch/Pocket_watch_test.svg"
+      './sw.js',
+      './index.html',
+      './assets/css/alarm.css',
+      './assets/css/chrono.css',
+      './assets/css/style.css',
+      './assets/css/timer.css',
+      './assets/js/alarm.js',
+      './assets/js/chrono.js',
+      './assets/js/main.js',
+      './assets/js/numerique_clock.js',
+      './assets/js/timer.js',
+      './assets/js/weather.js',
+      './assets/img/clock192.png',
+      './assets/img/clock512.png',
+      // './assets/icons/*',
+      './assets/font/ROBO.ttf',
+      './assets/fontAudio/ringtone.mp3',
+      // "./img/screenshot1.png",
+      // "./img/screenshot2.png",
+      // './font/TheBlowar-Regular.ttf',
     ])
-  );
-});
+  )
+})
 
 /* The `self.addEventListener('fetch', (event) => { ... })` code block is setting up a fetch event
 listener in the service worker. When a fetch event is triggered (i.e., when a network request is
@@ -86,7 +86,7 @@ self.addEventListener('fetch', (event) => {
     cacheFirst({
       request: event.request,
       preloadResponsePromise: event.preloadResponse,
-      fallbackUrl: './index.html',
+      fallbackUrl: '../../index.html',
     })
-  );
-});
+  )
+})

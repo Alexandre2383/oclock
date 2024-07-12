@@ -11,13 +11,13 @@
     <meta name="author" content="Alexandre" />
     <meta name="theme-color" content="#241a91" />
     <!-- shadowblue -->
-    <meta property="og:image" content="./img/clock512.svg" />
-    <link rel="shortcut icon" href="./img/clock96.svg" />
+    <meta property="og:image" content="./assets/img/clock512.svg" />
+    <link rel="shortcut icon" href="./assets/img/clock96.svg" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/timer.css" />
     <link rel="stylesheet" href="./assets/css/alarm.css" />
     <link rel="stylesheet" href="./assets/css/chrono.css" />
-    <link rel="manifest" href="/oclock.webmanifest" />
+    <link rel="manifest" href="./oclock.webmanifest" />
   </head>
   <body>
     <header>
@@ -70,7 +70,7 @@
                   id="locationInput"
                   placeholder="Enter a city"
                 />
-                <button id="searchButton">Search</button>
+                <button id="searchButton" class="search">Search</button>
               </label>
             </div>
             <div class="weather_info">
@@ -235,8 +235,8 @@
       <script src="./assets/js/numerique_clock.js" defer></script>
       <script src="./assets/js/weather.js" defer></script>
       <script src="./assets/js/main.js"></script>
-      <script src="./assets/js/swRegister.js" defer></script>
-      <script type="module" src="./assets/js/sw.js"></script>
+      <script src="./swRegister.js" defer></script>
+      <script type="module" src="./sw.js"></script>
     </main>
   </body>
 </html>

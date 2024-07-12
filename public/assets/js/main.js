@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const showClockButton = document.getElementById('showClock')
-  const showTimerButton = document.getElementById('showTimer')
-  const showChronoButton = document.getElementById('showChrono')
-  const showAlarmButton = document.getElementById('showAlarm')
-  const clockSection = document.getElementById('clockSection')
-  const timerSection = document.getElementById('timerSection')
-  const chronoSection = document.getElementById('chronoSection')
-  const alarmSection = document.getElementById('alarmSection')
+  const showClockButton = document.getElementById('showClock'),
+    showTimerButton = document.getElementById('showTimer'),
+    showChronoButton = document.getElementById('showChrono'),
+    showAlarmButton = document.getElementById('showAlarm'),
+    clockSection = document.getElementById('clockSection'),
+    timerSection = document.getElementById('timerSection'),
+    chronoSection = document.getElementById('chronoSection'),
+    alarmSection = document.getElementById('alarmSection'),
+    getWeatherButton = document.getElementById('searchButton')
 
   showClockButton.addEventListener('click', function () {
     clockSection.classList.remove('hidden')
