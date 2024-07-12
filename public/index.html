@@ -14,8 +14,8 @@
     <meta property="og:image" content="./img/clock512.svg" />
     <link rel="shortcut icon" href="./img/clock96.svg" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/minuter.css" />
-    <link rel="stylesheet" href="./assets/css/wakeup.css" />
+    <link rel="stylesheet" href="./assets/css/timer.css" />
+    <link rel="stylesheet" href="./assets/css/alarm.css" />
     <link rel="manifest" href="/oclock.webmanifest" />
   </head>
   <body>
@@ -94,21 +94,19 @@
       <!-- Timer -->
       <div id="timerSection" class="timer hidden">
         <div class="card">
-          <h2>Timer</h2>
+          <div class="container_title">
+            <img src="./assets/icons/icons8-hourglass-100.png" alt="" />
+            <h1 class="title">Timer</h1>
+          </div>
           <div id="minuteurCont">
-            <div class="minuteurButton">
-              <button id="minuteurPlay" class="button">Start</button>
-              <button id="minuteurPause" class="button">Stop</button>
-              <button id="minuteurReset" class="button">Reset</button>
-            </div>
             <div class="minuteurGrid">
-              <button id="hUp">
+              <button id="hUp" class="btnTimerUp">
                 <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
               </button>
-              <button id="mUp">
+              <button id="mUp" class="btnTimerUp">
                 <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
               </button>
-              <button id="sUp">
+              <button id="sUp" class="btnTimerUp">
                 <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
               </button>
 
@@ -139,20 +137,26 @@
                 value="00"
                 readonly
               />
-              <div>Heures</div>
-              <div>Minutes</div>
-              <div>Secondes</div>
-              <button id="hDown">
+              <div>Hour</div>
+              <div>Min</div>
+              <div>Sec</div>
+              <button id="hDown" class="btnTimerDown">
                 <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
               </button>
-              <button id="mDown">
+              <button id="mDown" class="btnTimerDown">
                 <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
               </button>
-              <button id="sDown">
+              <button id="sDown" class="btnTimerDown">
                 <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
               </button>
             </div>
             <div id="minuteurFinal"></div>
+            <div class="minuteurButton">
+              <button id="minuteurPlay" class="button">Start</button>
+              <button id="minuteurPause" class="button">Stop</button>
+              <button id="minuteurReset" class="button">Reset</button>
+            </div>
+            <button id="stopAlarmBtn" class="hidden">Stop Alarm</button>
           </div>
         </div>
       </div>
@@ -206,8 +210,8 @@
       </div>
       <script src="./assets/js/chrono.js"></script>
       <script src="./assets/js/timer.js" defer></script>
-      <script src="./assets/js/wakeup.js" defer></script>
-      <script src="./assets/js/minuter.js" defer></script>
+      <script src="./assets/js/alarm.js" defer></script>
+
       <script src="./assets/js/numerique_clock.js" defer></script>
       <script src="./assets/js/weather.js" defer></script>
       <script src="./assets/js/main.js"></script>
