@@ -13,12 +13,20 @@ document.addEventListener('DOMContentLoaded', function () {
   function formatTime(time) {
     const hours = Math.floor(time / 3600000),
       minutes = Math.floor((time % 3600000) / 60000),
-      seconds = Math.floor((time % 60000) / 1000)
+      seconds = Math.floor((time % 60000) / 1000),
+      milliseconds = Math.floor((time % 1000) / 10)
 
-    return `${String(hours).padStart(
-      2,
-      '0'
-    )}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+    return {
+      formattedTime: `${String(hours).padStart(2, '0')}:${String(
+        minutes
+      ).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`,
+      milliseconds: String(milliseconds).padStart(2, '0'),
+    }
+  }
+
+  function updateDisplay() {
+    const { formattedTime, milliseconds } = formatTime(elapsedTime)
+    chronoDisplay.innerHTML = `${formattedTime}<span class="millisecondes">${milliseconds}</span>`
   }
 
   function startChrono() {
@@ -27,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
     startTime = Date.now() - elapsedTime
     timerInterval = setInterval(() => {
       elapsedTime = Date.now() - startTime
-      chronoDisplay.textContent = formatTime(elapsedTime)
-    }, 1000)
+      updateDisplay()
+    }, 10) // Update every 10 milliseconds for smoother display
   }
 
   function resetChrono() {
@@ -36,15 +44,15 @@ document.addEventListener('DOMContentLoaded', function () {
     running = false
     startTime = null
     elapsedTime = 0
-    chronoDisplay.textContent = '00:00:00'
+    chronoDisplay.innerHTML = '00:00:00<span class="millisecondes">.00</span>'
     chronoSave.innerHTML = ''
   }
 
   function recordLap() {
     if (!running) return
-    const lapTime = formatTime(elapsedTime)
+    const { formattedTime, milliseconds } = formatTime(elapsedTime)
     const lapElement = document.createElement('div')
-    lapElement.textContent = lapTime
+    lapElement.innerHTML = `${formattedTime}<span class="millisecondes">${milliseconds}</span>`
     chronoSave.prepend(lapElement) // Add the new lap at the beginning
   }
 

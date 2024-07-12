@@ -165,27 +165,35 @@
       <!-- Chrono -->
       <div id="chronoSection" class="chrono hidden">
         <div class="card">
-          <h2>Chronometer</h2>
+          <div class="container_title">
+            <img src="./assets/icons/icons8-stopwatch-100.png" alt="" />
+            <h1 class="title">Chrono</h1>
+          </div>
           <div id="chronometreCont">
             <div class="chronometreButton">
-              <div id="chronometreGeneral">00:00:00</div>
+              <div id="chronometreGeneral">
+                00:00:00<span id="milliSeconds" class="millisecondes">.00</span>
+              </div>
               <button id="chronometreReset" class="button">
                 <img
                   src="./assets/icons/icons8-stop-gesture-96.png"
                   alt="Remise à zéro"
                 />
+                <p>Reset</p>
               </button>
               <button id="chronometreTours" class="button">
                 <img
                   src="./assets/icons/icons8-time-100.png"
                   alt="Ajouter un tour"
                 />
+                <p>Steps</p>
               </button>
               <button id="chronometrePlay" class="button">
                 <img
                   src="./assets/icons/icons8-start-skin-type-2-96.png"
                   alt="Lancer le chronometre"
                 />
+                <p>Start</p>
               </button>
             </div>
             <div id="chronometreSave"></div>

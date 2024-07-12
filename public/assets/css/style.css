@@ -59,6 +59,7 @@ nav > div > img {
 
 nav > div > img:hover {
   height: 12vh;
+  cursor: pointer;
 }
 
 .timer {

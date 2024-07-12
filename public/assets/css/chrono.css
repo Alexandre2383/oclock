@@ -9,3 +9,41 @@
   box-shadow: inset 0px 0px 18px 5px #4c4c4c;
   text-shadow: -3px -5px 4px black;
 }
+
+.chronometreButton button {
+  background-color: transparent;
+  color: rgb(226, 226, 163);
+}
+
+.chronometreButton p {
+  font-size: xx-large;
+}
+#chronometreSave {
+  font-size: 5rem;
+}
+
+.millisecondes {
+  font-size: 1.5rem; /* Taille de la police pour les millisecondes */
+}
+
+/*Computer Screen*/
+@media screen and (max-width: 1050px) {
+  #chronometreGeneral,
+  #chronometreSave {
+    font-size: 5rem;
+  }
+}
+/*Tablette Screen*/
+@media screen and (max-width: 800px) {
+  #chronometreGeneral,
+  #chronometreSave {
+    font-size: 3rem;
+  }
+}
+/*Mobile Screen*/
+@media screen and (max-width: 449px) {
+  #chronometreGeneral,
+  #chronometreSave {
+    font-size: xx-large;
+  }
+}
