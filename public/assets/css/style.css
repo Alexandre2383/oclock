@@ -62,14 +62,6 @@ nav > div > img:hover {
   cursor: pointer;
 }
 
-.timer {
-  margin-top: 20px;
-}
-
-.alarm {
-  margin-top: 20px;
-}
-
 .card {
   margin: auto;
   background-color: aliceblue;
@@ -87,7 +79,7 @@ nav > div > img:hover {
 
 .numerique_clock {
   font-family: 'Robo Clock', 'Courier New', Courier, monospace;
-  font-size: 8em;
+  font-size: 8rem;
   padding: 20px;
   /* color: rgb(214, 214, 180); */
   margin: 0;
