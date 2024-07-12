@@ -90,15 +90,12 @@
           </div>
         </div>
       </div>
+
       <!-- Timer -->
       <div id="timerSection" class="timer hidden">
         <div class="card">
           <h2>Timer</h2>
-          <!-- <input type="text" id="timerInput" placeholder="hh:mm:ss" />
-          <button onclick="startTimer()">Start ▼</button>
-          <button onclick="stopTimer()">Stop</button>
-          <div id="timerDisplay"></div> -->
-          <!-- <div id="minuteurCont">
+          <div id="minuteurCont">
             <div class="minuteurButton">
               <button id="minuteurPlay" class="button">Start</button>
               <button id="minuteurPause" class="button">Stop</button>
@@ -156,7 +153,36 @@
               </button>
             </div>
             <div id="minuteurFinal"></div>
-          </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Chrono -->
+      <div id="chronoSection" class="chrono hidden">
+        <div class="card">
+          <h2>Chronometer</h2>
+          <div id="chronometreCont">
+            <div class="chronometreButton">
+              <button id="chronometreReset" class="button">
+                <img src="./Pictures/reset.png" alt="Remise à zéro" />
+              </button>
+              <button id="chronometreTours" class="button">
+                <img src="./Pictures/tours.png" alt="Ajouter un tour" />
+              </button>
+              <button id="chronometrePlay" class="button">
+                <img src="./Pictures/play.png" alt="Lancer le chronometre" />
+              </button>
+            </div>
+            <div id="chronometreGeneral">00:00:00</div>
+            <div id="chronometreSave"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alarm -->
+      <div id="alarmSection" class="alarm hidden">
+        <div class="card">
+          <h2>Alarm</h2>
           <h1 id="TimeWakeup">00:00:00 PM</h1>
           <div class="content">
             <div class="column">
@@ -178,24 +204,8 @@
           <button id="setAlarmBtn" class="btnAlarm">Set Alarm</button>
         </div>
       </div>
-
-      <!-- Chrono -->
-      <div id="chronoSection" class="chrono hidden">
-        <div class="card">
-          <h2>Chronometer</h2>
-          <button onclick="startStopwatch()">Start</button>
-          <button onclick="stopStopwatch()">Stop</button>
-          <div id="stopwatchDisplay"></div>
-        </div>
-      </div>
-      <!-- Alarm -->
-      <div id="alarmSection" class="alarm hidden">
-        <div class="card">
-          <h2>Alarm</h2>
-          <input type="time" id="alarmTime" />
-          <button onclick="setAlarm()">Set</button>
-        </div>
-      </div>
+      <script src="./assets/js/chrono.js"></script>
+      <script src="./assets/js/timer.js" defer></script>
       <script src="./assets/js/wakeup.js" defer></script>
       <script src="./assets/js/minuter.js" defer></script>
       <script src="./assets/js/numerique_clock.js" defer></script>
