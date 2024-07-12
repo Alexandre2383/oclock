@@ -13,11 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     sDownBtn = document.getElementById('sDown'),
     finalDisplay = document.getElementById('minuteurFinal')
 
-  const stopAlarmBtn = document.createElement('button') // Create the stop button
-  stopAlarmBtn.id = 'stopAlarmBtn'
-  stopAlarmBtn.textContent = 'Stop Alarm'
-  stopAlarmBtn.classList.add('hidden') // Hide button initially
-  document.body.appendChild(stopAlarmBtn) // Append stop button to the body
+  const stopAlarmBtn = document.getElementById('stopAlarmBtn') // Create the stop button
 
   let timer,
     isRunning = false,

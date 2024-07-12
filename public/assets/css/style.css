@@ -16,9 +16,10 @@ body {
   font-family: 'Robot Text', 'Courier New', Courier, monospace;
   text-align: center;
   background: linear-gradient(rgb(13, 26, 63), rgb(126, 154, 230));
-  color: aliceblue;
+  /* color: aliceblue; */
   min-height: 100vh;
   /* margin-bottom: 2rem; */
+  overflow-x: hidden;
   position: relative;
   color: rgb(226, 226, 163);
   text-shadow: -1px -1px 3px black;
