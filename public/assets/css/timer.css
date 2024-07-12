@@ -1,0 +1,131 @@
+.minuteurGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vh;
+  width: fit-content;
+  margin: 0 auto;
+
+  > input {
+    font-size: 10vh;
+    text-align: center;
+    width: 2em;
+    background: transparent;
+    border: none;
+    color: rgb(226, 226, 163);
+  }
+
+  > div {
+    text-align: center;
+    letter-spacing: 0.5em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+}
+
+.btnTimerUp,
+.btnTimerDown {
+  background-color: transparent;
+}
+
+.btnTimerUp {
+  transform: rotate(180deg);
+}
+
+#minuteurFinal {
+  font-size: 20vh;
+  color: rgb(226, 226, 163);
+  text-align: center;
+}
+
+.minuteurButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 15px;
+
+  > button {
+    width: 15rem;
+    height: 5rem;
+    font-size: x-large;
+  }
+}
+
+#stopAlarmBtn {
+  margin-top: 15px;
+  width: 15rem;
+  height: 5rem;
+  font-size: x-large;
+}
+
+input:focus {
+  border: none;
+}
+
+/*Computer Screen*/
+@media screen and (max-width: 1050px) {
+  .minuteurButton {
+    margin-top: 15px;
+
+    > button {
+      margin: 5px;
+      width: 10rem;
+      height: 4rem;
+      font-size: large;
+    }
+  }
+}
+
+/*Tablette Screen*/
+@media screen and (max-width: 630px) {
+  .minuteurGrid {
+    width: fit-content;
+    margin: 0 auto;
+
+    > button {
+      width: 4rem;
+    }
+
+    > input {
+      width: 4rem;
+      font-size: xx-large;
+    }
+
+    > div {
+      font-size: small;
+    }
+  }
+  .minuteurGrid img {
+    margin-left: -1rem;
+  }
+  .minuteurButton {
+    margin-top: 15px;
+
+    > button {
+      margin: 5px;
+      width: 10rem;
+      height: 4rem;
+      font-size: large;
+    }
+  }
+}
+
+/*Mobile Screen*/
+@media screen and (max-width: 385px) {
+  .minuteurButton {
+    margin-top: 15px;
+
+    > button {
+      margin: 5px;
+      width: 4rem;
+      height: 2rem;
+      font-size: small;
+    }
+  }
+  #stopAlarmBtn {
+    margin-top: 10px;
+    width: 8rem;
+    height: 4rem;
+    font-size: large;
+  }
+}

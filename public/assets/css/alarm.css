@@ -1,0 +1,106 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.content.disable {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.content .column {
+  border-radius: 5px;
+  padding: 0 10px;
+  background-color: aliceblue;
+  border: 1px solid #999;
+  width: calc(100% / 3 -5px);
+}
+
+.column select {
+  font-family: 'Robot Text', 'Courier New', Courier, monospace;
+  outline: none;
+  border: none;
+  height: 53px;
+  margin-left: 0;
+  background-color: aliceblue;
+
+  font-size: 1.5rem;
+}
+
+.btnAlarm {
+  width: 10rem;
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  padding: 17px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+}
+
+#TimeWakeup {
+  font-family: 'Robo Clock', 'Courier New', Courier, monospace;
+  font-size: 8rem;
+  padding: 20px;
+  margin-bottom: 10px;
+
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 18px 5px #4c4c4c;
+  text-shadow: -3px -5px 4px black;
+}
+
+/*Computer Screen*/
+@media screen and (max-width: 1400px) {
+  #TimeWakeup {
+    font-size: 6rem;
+  }
+}
+
+/*Tablette Screen*/
+@media screen and (max-width: 1060px) {
+  #TimeWakeup {
+    font-size: 4.5rem;
+  }
+}
+
+/*Mobile Screen*/
+@media screen and (max-width: 650px) {
+  #TimeWakeup {
+    font-size: 2.5rem;
+  }
+  .column {
+    /* margin: ; */
+    width: 6rem;
+  }
+  .column select {
+    font-size: smaller;
+  }
+  .column select {
+    width: 4rem;
+  }
+}
+
+/*Mobile Screen*/
+@media screen and (max-width: 410px) {
+  #TimeWakeup {
+    font-size: 2.5rem;
+  }
+  .column {
+    margin: 5px;
+    /* width: 8rem; */
+  }
+  /* .column select {
+    font-size: 10px;
+  } */
+  .column select {
+    width: 2.5rem;
+  }
+  option {
+    font-size: xx-small;
+  }
+}

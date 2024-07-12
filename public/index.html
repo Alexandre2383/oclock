@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>O'Clock PWA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A clock application with chronometer, timer and alarm."
+    />
+    <meta name="author" content="Alexandre" />
+    <meta name="theme-color" content="#241a91" />
+    <!-- shadowblue -->
+    <meta property="og:image" content="./assets/img/clock512.svg" />
+    <link rel="shortcut icon" href="./assets/img/clock96.svg" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/timer.css" />
+    <link rel="stylesheet" href="./assets/css/alarm.css" />
+    <link rel="stylesheet" href="./assets/css/chrono.css" />
+    <link rel="manifest" href="./oclock.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <img
+            id="showClock"
+            src="./assets/icons/icons8-clock-100.png"
+            alt="Fonction horloge"
+          />
+        </div>
+        <div>
+          <img
+            id="showTimer"
+            src="./assets/icons/icons8-hourglass-100.png"
+            alt="Fonction chronometre"
+          />
+        </div>
+        <div>
+          <img
+            id="showChrono"
+            src="./assets/icons/icons8-stopwatch-100.png"
+            alt="Fonction minuteur"
+          />
+        </div>
+        <div>
+          <img
+            id="showAlarm"
+            src="./assets/icons/icons8-alarm-clock-100.png"
+            alt="Fonction reveil"
+          />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Horloge et météo -->
+      <div id="clockSection" class="clock">
+        <div class="card">
+          <div class="container_title">
+            <img src="./assets/icons/icons8-clock-100.png" alt="" />
+            <h1 class="title">Clock</h1>
+          </div>
+          <div><p id="clockDisplay" class="numerique_clock"></p></div>
+          <div class="container_weather">
+            <div class="">
+              <h2>Actual Weather</h2>
+              <label for="searchButton">
+                <input
+                  type="text"
+                  id="locationInput"
+                  placeholder="Enter a city"
+                />
+                <button id="searchButton" class="search">Search</button>
+              </label>
+            </div>
+            <div class="weather_info">
+              <h2 id="location"></h2>
+              <img
+                id="weatherIcon"
+                src=""
+                alt="Weather Icon"
+                class="weather_icon"
+              />
+              <div class="weather_info">
+                <p id="temperature"></p>
+                <p class="p_humidity">humidity<span id="humidity"></span></p>
+                <!-- <p id="humidity"></p> -->
+              </div>
+              <p id="description"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timer -->
+      <div id="timerSection" class="timer hidden">
+        <div class="card">
+          <div class="container_title">
+            <img src="./assets/icons/icons8-hourglass-100.png" alt="" />
+            <h1 class="title">Timer</h1>
+          </div>
+          <div id="minuteurCont">
+            <div class="minuteurGrid">
+              <button id="hUp" class="btnTimerUp">
+                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+              </button>
+              <button id="mUp" class="btnTimerUp">
+                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+              </button>
+              <button id="sUp" class="btnTimerUp">
+                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+              </button>
+
+              <input
+                type="number"
+                id="minuteurH"
+                name="minuteurH"
+                min="0"
+                max="24"
+                value="00"
+                readonly
+              />
+              <input
+                type="number"
+                id="minuteurM"
+                name="minuteurM"
+                min="0"
+                max="60"
+                value="00"
+                readonly
+              />
+              <input
+                type="number"
+                id="minuteurS"
+                name="minuteurS"
+                min="0"
+                max="60"
+                value="00"
+                readonly
+              />
+              <div>Hour</div>
+              <div>Min</div>
+              <div>Sec</div>
+              <button id="hDown" class="btnTimerDown">
+                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+              </button>
+              <button id="mDown" class="btnTimerDown">
+                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+              </button>
+              <button id="sDown" class="btnTimerDown">
+                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+              </button>
+            </div>
+            <div id="minuteurFinal"></div>
+            <div class="minuteurButton">
+              <button id="minuteurPlay" class="button">Start</button>
+              <button id="minuteurPause" class="button">Stop</button>
+              <button id="minuteurReset" class="button">Reset</button>
+            </div>
+            <button id="stopAlarmBtn" class="hidden">Stop Alarm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chrono -->
+      <div id="chronoSection" class="chrono hidden">
+        <div class="card">
+          <div class="container_title">
+            <img src="./assets/icons/icons8-stopwatch-100.png" alt="" />
+            <h1 class="title">Chrono</h1>
+          </div>
+          <div id="chronometreCont">
+            <div class="chronometreButton">
+              <div id="chronometreGeneral">
+                00:00:00<span id="milliSeconds" class="millisecondes">.00</span>
+              </div>
+              <button id="chronometreReset" class="button">
+                <img
+                  src="./assets/icons/icons8-stop-gesture-96.png"
+                  alt="Remise à zéro"
+                />
+                <p>Reset</p>
+              </button>
+              <button id="chronometreTours" class="button">
+                <img
+                  src="./assets/icons/icons8-time-100.png"
+                  alt="Ajouter un tour"
+                />
+                <p>Steps</p>
+              </button>
+              <button id="chronometrePlay" class="button">
+                <img
+                  src="./assets/icons/icons8-start-skin-type-2-96.png"
+                  alt="Lancer le chronometre"
+                />
+                <p>Start</p>
+              </button>
+            </div>
+            <div id="chronometreSave"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alarm -->
+      <div id="alarmSection" class="alarm hidden">
+        <div class="card">
+          <div class="container_title">
+            <img src="./assets/icons/icons8-alarm-clock-100.png" alt="" />
+            <h1 class="title">Alarm</h1>
+          </div>
+          <h1 id="TimeWakeup">00:00:00 PM</h1>
+          <div class="content">
+            <div class="column">
+              <select>
+                <option value="Hour" selected hidden>Hour</option>
+              </select>
+            </div>
+            <div class="column">
+              <select>
+                <option value="Minute" selected hidden>Minute</option>
+              </select>
+            </div>
+            <div class="column">
+              <select>
+                <option value="AM/PM" selected hidden>AM/PM</option>
+              </select>
+            </div>
+          </div>
+          <button id="setAlarmBtn" class="btnAlarm">Set Alarm</button>
+        </div>
+      </div>
+      <script src="./assets/js/chrono.js"></script>
+      <script src="./assets/js/timer.js" defer></script>
+      <script src="./assets/js/alarm.js" defer></script>
+      <script src="./assets/js/numerique_clock.js" defer></script>
+      <script src="./assets/js/weather.js" defer></script>
+      <script src="./assets/js/main.js"></script>
+      <script src="./swRegister.js" defer></script>
+      <script type="module" src="./sw.js"></script>
+    </main>
+  </body>
+</html>
