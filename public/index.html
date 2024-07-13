@@ -54,10 +54,10 @@
     </header>
     <main>
       <!-- Horloge et météo -->
-      <div id="clockSection" class="clock">
+      <section id="clockSection" class="clock">
         <div class="card">
           <div class="container_title">
-            <img src="./assets/icons/icons8-clock-100.png" alt="" />
+            <img src="./assets/icons/icons8-clock-100.png" alt="Clock Icon" />
             <h1 class="title">Clock</h1>
           </div>
           <div><p id="clockDisplay" class="numerique_clock"></p></div>
@@ -84,31 +84,42 @@
               <div class="weather_info">
                 <p id="temperature"></p>
                 <p class="p_humidity">humidity<span id="humidity"></span></p>
-                <!-- <p id="humidity"></p> -->
               </div>
               <p id="description"></p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Timer -->
       <div id="timerSection" class="timer hidden">
         <div class="card">
           <div class="container_title">
-            <img src="./assets/icons/icons8-hourglass-100.png" alt="" />
+            <img
+              src="./assets/icons/icons8-hourglass-100.png"
+              alt="Icon Timer"
+            />
             <h1 class="title">Timer</h1>
           </div>
           <div id="minuteurCont">
             <div class="minuteurGrid">
               <button id="hUp" class="btnTimerUp">
-                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+                <img
+                  src="./assets/icons/icons8-arrow-up-64.png"
+                  alt="Arrow up"
+                />
               </button>
               <button id="mUp" class="btnTimerUp">
-                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+                <img
+                  src="./assets/icons/icons8-arrow-up-64.png"
+                  alt="Arrow up"
+                />
               </button>
               <button id="sUp" class="btnTimerUp">
-                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+                <img
+                  src="./assets/icons/icons8-arrow-up-64.png"
+                  alt="Arrow up"
+                />
               </button>
 
               <input
@@ -142,13 +153,22 @@
               <div>Min</div>
               <div>Sec</div>
               <button id="hDown" class="btnTimerDown">
-                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+                <img
+                  src="./assets/icons/icons8-arrow-up-64.png"
+                  alt="Arrow down"
+                />
               </button>
               <button id="mDown" class="btnTimerDown">
-                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+                <img
+                  src="./assets/icons/icons8-arrow-up-64.png"
+                  alt="Arrow down"
+                />
               </button>
               <button id="sDown" class="btnTimerDown">
-                <img src="./assets/icons/icons8-arrow-up-64.png" alt="" />
+                <img
+                  src="./assets/icons/icons8-arrow-up-64.png"
+                  alt="Arrow down"
+                />
               </button>
             </div>
             <div id="minuteurFinal"></div>
@@ -166,7 +186,10 @@
       <div id="chronoSection" class="chrono hidden">
         <div class="card">
           <div class="container_title">
-            <img src="./assets/icons/icons8-stopwatch-100.png" alt="" />
+            <img
+              src="./assets/icons/icons8-stopwatch-100.png"
+              alt="Icon Chrono Stopwatch"
+            />
             <h1 class="title">Chrono</h1>
           </div>
           <div id="chronometreCont">
@@ -177,21 +200,18 @@
               <button id="chronometreReset" class="button">
                 <img
                   src="./assets/icons/icons8-stop-gesture-96.png"
-                  alt="Remise à zéro"
+                  alt="Reset"
                 />
                 <p>Reset</p>
               </button>
               <button id="chronometreTours" class="button">
-                <img
-                  src="./assets/icons/icons8-time-100.png"
-                  alt="Ajouter un tour"
-                />
+                <img src="./assets/icons/icons8-time-100.png" alt="Add steps" />
                 <p>Steps</p>
               </button>
               <button id="chronometrePlay" class="button">
                 <img
                   src="./assets/icons/icons8-start-skin-type-2-96.png"
-                  alt="Lancer le chronometre"
+                  alt="Start Chrono"
                 />
                 <p>Start</p>
               </button>
@@ -205,7 +225,10 @@
       <div id="alarmSection" class="alarm hidden">
         <div class="card">
           <div class="container_title">
-            <img src="./assets/icons/icons8-alarm-clock-100.png" alt="" />
+            <img
+              src="./assets/icons/icons8-alarm-clock-100.png"
+              alt="Icon Alarm Clock"
+            />
             <h1 class="title">Alarm</h1>
           </div>
           <h1 id="TimeWakeup">00:00:00 PM</h1>
