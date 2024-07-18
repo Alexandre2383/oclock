@@ -3,12 +3,18 @@
  * and updates every second.
  */
 function updateClock() {
+  // Instance of Date object
   var now = new Date(),
+    // Get the actual hour and convert it to String, adding 0 to keeping the time format
     hours = now.getHours().toString().padStart(2, '0'),
     minutes = now.getMinutes().toString().padStart(2, '0'),
     seconds = now.getSeconds().toString().padStart(2, '0')
+
+  // Get the paragrah with the id 'ClockDisplay and writte is content with the actual Time
   document.getElementById('clockDisplay').textContent =
     hours + ':' + minutes + ':' + seconds
+
+  // Each 1 second, execute the updateClock function
   setTimeout(updateClock, 1000)
 }
 
