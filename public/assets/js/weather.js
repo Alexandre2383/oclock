@@ -7,36 +7,19 @@ searchButton.addEventListener('click', function () {
   const city = document.getElementById('locationInput').value
 
   if (city) {
-    // Fetch the API key
-    fetchApiKey()
-      // Then call the getWeather function with city and apiKey as parameters
-      .then((apiKey) => getWeather(city, apiKey))
-      .catch((error) => console.error('Error fetching the API key:', error))
+    // Call the getWeather function with the city
+    getWeather(city)
   } else {
     alert('Please enter a city name.')
   }
 })
 
 // If no city is provided, fetch weather for 'Toulon' by default
-fetchApiKey()
-  .then((apiKey) => getWeather('Toulon', apiKey))
-  .catch((error) => console.error('Error fetching the API key:', error))
-
-// Asynchronous function for fetching the API key
-async function fetchApiKey() {
-  // Wait for the response from the API route
-  const response = await fetch('/api-key')
-
-  // Wait to parse the response data as JSON
-  const data = await response.json()
-
-  // Return the API key from the data
-  return data.apiKey
-}
+getWeather('Toulon')
 
 // Asynchronous function to get weather information
-async function getWeather(city, apiKey) {
-  const apiUrl = 'https://api.openweathermap.org/data/2.5/weather'
+async function getWeather(city) {
+  const apiUrl = '/weather'
 
   // Get elements to display weather information
   const locationElement = document.getElementById('location')
@@ -45,12 +28,9 @@ async function getWeather(city, apiKey) {
   const descriptionElement = document.getElementById('description')
   const humidityElement = document.getElementById('humidity')
 
-  // Construct the URL with city and API key
-  const url = `${apiUrl}?q=${city}&appid=${apiKey}&units=metric`
-
   try {
-    // Fetch weather data from the API
-    const response = await fetch(url)
+    // Fetch weather data from the proxy API route
+    const response = await fetch(`${apiUrl}?q=${city}`)
     if (!response.ok) {
       throw new Error('Weather data not available')
     }
