@@ -57,7 +57,6 @@ self.addEventListener('install', (event) => {
           './assets/icons/snow.png',
           './assets/icons/rain.png',
           './assets/icons/mist.png',
-          './assets/icons/icons8-stopwatch-100.png',
         ])
       } catch (error) {
         // Gestion des erreurs potentielles

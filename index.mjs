@@ -11,6 +11,7 @@ const __dirname = dirname(__filename)
 const app = express()
 const port = 4000
 
+// Utilisation du middleware d'express pour servir le chemin du module et du dossier public
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Endpoint proxy pour l'API météo
@@ -20,10 +21,12 @@ app.get('/weather', async (req, res) => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${q}&appid=${apiKey}&units=metric`
 
   try {
+    // Envoi d'une requête vers l'API météo en fonction de l'url construite
     const response = await fetch(url)
     if (!response.ok) {
       throw new Error('Weather data not available')
     }
+    // Extraction et préparation des données JSON à partir de la réponse
     const data = await response.json()
     res.json(data)
   } catch (error) {

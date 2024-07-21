@@ -1,3 +1,4 @@
+// Ecouteur du chargement de la page entiére
 window.addEventListener('load', () => {
   // Fonction asynchrone pour enregistrer le Service Worker lors du chargement de la page
   const registerServiceWorker = async () => {
@@ -6,7 +7,7 @@ window.addEventListener('load', () => {
       try {
         // Enregistrement du Service Worker 'sw.js' avec une portée spécifique
         const registration = await navigator.serviceWorker.register('sw.js', {
-          scope: './',
+          scope: './', // Portée d'enregistrement
         })
 
         // Vérification de l'état du Service Worker pour afficher des messages de journalisation appropriés
